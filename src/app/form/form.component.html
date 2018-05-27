@@ -1,0 +1,19 @@
+<form name="contactForm" #contactForm="ngForm" (ngSubmit)="contact(contactForm)" class="w-50 mx-auto my-5" novalidate>
+  <h2 class="text-center my-5">Please Complete the below data ..</h2>
+  <input type="text" class="form-control" placeholder="Enter your Address" ngModel name="address" #address="ngModel" required/>
+  <div class="alert alert-danger" role="alert" *ngIf="address.touched && !address.valid">
+    Address is required
+  </div>
+  <br>
+  <input type="text" class="form-control" placeholder="Enter your Phone" ngModel name="phone" #phone="ngModel" required/>
+  <div class="alert alert-danger" role="alert" *ngIf="phone.touched && !phone.valid">
+    Phone is required
+  </div>
+  <br>
+  <input type="email" class="form-control" placeholder="Enter your Email" ngModel name="email" #email="ngModel" required/>
+  <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+    Email is required
+  </div>
+
+  <button class="btn btn-warning mt-4" [disabled]="!contactForm.valid">Submit</button>
+</form>

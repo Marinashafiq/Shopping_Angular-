@@ -1,0 +1,28 @@
+.navbar{
+  .container{
+    .collapse{
+      .navbar-nav{
+        .nav-item{
+          img{
+            height: 30px;
+            width:30px;
+          }
+        }
+      }
+    }
+  }
+}
+footer{
+  font-family: raleway;
+  font-size: 14px;
+  color: grey;
+  img{
+    height: 25px;
+    width:25px;
+    margin-right: 2vw;
+
+  }
+  .copy{
+    background-color:#16191f;
+  }
+}

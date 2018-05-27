@@ -1,0 +1,16 @@
+<div class="container">
+  <h3 class="my-5">Item Details</h3>
+  <div class="row my-5 border p-5 rounded">
+    <div class="col-md-5 rounded">
+      <img class="card-img-top" src={{selected.image}} alt="Card image cap">
+    </div>
+    <div class="col-md-7">
+      <h2>{{selected.name}}</h2>
+      <h4>Category : {{selected.category}}</h4>
+      <h5>Price : ${{selected.price}}</h5>
+      <label>Items Number</label><br>
+      <input type="number" name="test_name" value="1" min="1" oninput="validity.valid||(value='');"><br>
+      <button  class="btn buttonColor mt-4" (click)="addCart(selected.id)">Add to Cart</button>
+    </div>
+  </div>
+</div>

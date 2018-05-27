@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container">
+    <a class="navbar-brand text-white" routerLink="">SHOPO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link text-white" routerLink="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <div class="btn-group">
+            <button type="button" class="btn bg-transparent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../assets/imgs/user.png">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">View/Edit</a>
+              <a class="dropdown-item" href="#">Sign Out</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <div class="btn-group">
+            <button type="button" class="btn bg-transparent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../assets/imgs/cart.png">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" routerLink="cart">View Cart</a>
+              <a class="dropdown-item" routerLink="form">Submit Form</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="bg-dark mt-5">
+  <div class="py-5 text-center">
+    <p class="mb-0 d-inline-block mr-5">About Us</p>
+    <p class="mb-0 d-inline-block mr-5">Terms of Use</p>
+    <p class="mb-0 d-inline-block mr-5">Copyright Policy</p>
+    <p class="mb-0 d-inline-block">FQA's</p>
+    <p class="mb-0 d-inline-block mr-5">Careers</p>
+    <p class="mb-0 d-inline-block mr-5">Privacy Policy</p>
+    <p class="mb-0 d-inline-block mr-5">Support & Help</p>
+    <p class="mb-0 d-inline-block ">Contact Us</p>
+    <div class="text-center py-3">
+      <img src="../assets/imgs/facebook-logo-button.png">
+      <img src="../assets/imgs/twitter-logo-button.png">
+      <img src="../assets/imgs/google-plus-logo-button.png">
+      <img src="../assets/imgs/instagram-logo.png">
+    </div>
+  </div>
+  <div class="copy p-3 text-center">Copyright (c) 2018 Copyright Holder All Rights Reserved.</div>
+</footer>

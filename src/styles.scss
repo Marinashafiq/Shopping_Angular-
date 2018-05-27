@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+$primaryColor:#563d7c;
+
+@font-face {
+    font-family: raleway;
+    src: url(assets/fonts/raleway/Raleway-Regular.ttf);
+}
+
+body{
+  font-family: raleway;
+}
+
+.buttonColor{
+  background-color: $primaryColor;
+  color: white;
+}

@@ -1,0 +1,62 @@
+<div class="jumbotron text-center text-white">
+  <h1 class="display-4">Welcome to SHOPO!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>You can find whatever you want at our store</p>
+</div>
+
+<!-- Here's the toggle button between the list and grid view -->
+
+<div class="container">
+  <div class="btn-group btn-group-toggle mt-5 text-white d-flex justify-content-between">
+  <label class="buttonColor" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="isGrid" (click)="isGrid = !isGrid">
+    <img src="../../assets/imgs/grid.png"  class="mr-4"alt="">
+    <img src="../../assets/imgs/list.png" alt="">
+  </label>
+  <div>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="term">
+  </div>
+  </div>
+
+<!-- Here's the queryParams for URL and and using the data I got from JSON to show in my home page -->
+<!-- There's also a filter:term for searching which is connected with the search input above -->
+
+  <div class="row" *ngIf="isGrid ; else list" >
+    <div class="col-md-4 my-5 " *ngFor="let item of jsonData | filter:term">
+      <div id={{item.id}} class="card">
+        <a [routerLink]="['/details']" [queryParams]="{name:item.name}">
+        <img class="card-img-top" id={{item.id}} src={{item.image}} alt="Card image cap">
+        <div id={{item.id}} class="card-body">
+          <h5 id={{item.id}} class="card-title">{{item.name}}</h5>
+          <p id={{item.id}} class="card-text">{{item.category}}</p>
+          <h6><strong>${{item.price}}</strong></h6>
+        </div>
+        </a>
+        <div class="text-right m-3">
+          <button  class="btn buttonColor" (click)="addCart(item.id)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- This happen when toggle button pressed if its value false then is code - list -will apply -->
+  <ng-template #list>
+    <div class="row border rounded p-4 my-3" *ngFor="let item of jsonData | filter:term">
+      <div class="col-md-5">
+        <a [routerLink]="['/details']" [queryParams]="{name:item.name}">
+        <img class="card-img-top rounded" src={{item.image}} alt="Card image cap">
+        </a>
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">{{item.category}}</p>
+          <h6><strong>${{item.price}}</strong></h6>
+          <div class="text-right">
+            <button class="btn buttonColor" (click)="addCart(item.id)" >Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

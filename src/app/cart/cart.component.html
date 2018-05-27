@@ -1,0 +1,27 @@
+<div class="container my-5 cartTable">
+  <h3 class="my-5">Shopping Cart</h3>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cartItem of selectedData ; let i= index">
+      <th scope="row">{{i+1}}</th>
+      <td><img src={{cartItem.image}} class="rounded"></td>
+      <td>{{cartItem.name}}</td>
+      <td>{{cartItem.category}}</td>
+      <td><input type="number" name="test_name" value="1" min="1" oninput="validity.valid||(value='');"></td>
+      <td>${{cartItem.price}}</td>
+      <td><button type="button" name="delete" class="btn btn-danger" (click)="delete(cartItem.id)"><img src="../../assets/imgs/delete-button.png" class="mb-1">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
